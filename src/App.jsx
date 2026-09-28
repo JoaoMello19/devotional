@@ -15,10 +15,9 @@ function App() {
 
     return (
         <div className="container">
-            <SideBar menuOpen={menuOpen} />
+            <SideBar menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
             <main className="flex-column">
                 <TopBar onClick={() => setMenuOpen(!menuOpen)} />
-                {/* <Home /> */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/rosary" element={<Rosary />} />

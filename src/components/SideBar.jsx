@@ -5,13 +5,16 @@ import home from "../assets/home.png";
 import homeActive from "../assets/home_active.png";
 import rosary from "../assets/rosary.png";
 import rosaryActive from "../assets/rosary_active.png";
+import angel from "../assets/angel.png";
+import angelActive from "../assets/angel_active.png";
 import crucifix from "../assets/crucifix.png";
 
-function NavigationItem({ href = "#", title, icon, activeIcon }) {
+function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
     return (
         <NavLink
             to={href}
             className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={closeMenu}
         >
             {({ isActive }) => (
                 <>
@@ -27,7 +30,7 @@ function NavigationItem({ href = "#", title, icon, activeIcon }) {
     );
 }
 
-export default function SideBar({ menuOpen }) {
+export default function SideBar({ menuOpen, closeMenu }) {
     const pages = [
         {
             link: "/",
@@ -44,8 +47,8 @@ export default function SideBar({ menuOpen }) {
         {
             link: "/angelus",
             title: "Angelus",
-            icon: rosary,
-            activeIcon: rosaryActive,
+            icon: angel,
+            activeIcon: angelActive,
         },
     ];
 
@@ -54,6 +57,9 @@ export default function SideBar({ menuOpen }) {
             id="sidebar"
             className={menuOpen ? "open flex-column" : "flex-column"}
         >
+            <button id="close-button" onClick={closeMenu}>
+                X
+            </button>
             <img src={crucifix} alt="" />
             <h1>Meu Devocionário</h1>
             <h2>Um caminho de fé, todos os dias</h2>
@@ -68,6 +74,7 @@ export default function SideBar({ menuOpen }) {
                         href={page.link}
                         icon={page.icon}
                         activeIcon={page.activeIcon}
+                        closeMenu={closeMenu}
                     />
                 ))}
             </nav>

@@ -4,10 +4,10 @@ import "./TopBar.css";
 export default function TopBar({ onClick }) {
     return (
         <header id="topbar" className="flex-row">
-            <img src={menu} alt="" id="menu-icon" onClick={onClick} />
-            <div id="title" className="flex-row">
-                <h1>Meu Devocionário</h1>
-            </div>
+            <button id="menu-button" onClick={onClick}>
+                <img src={menu} alt="" id="menu-icon" />
+            </button>
+            <h1 id="title">Meu Devocionário</h1>
         </header>
     );
 }

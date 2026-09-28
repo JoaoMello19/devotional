@@ -2,7 +2,7 @@ import "./Angelus.css";
 
 const angelus = [
     {
-        title: "Português",
+        language: "Português",
         prayers: [
             {
                 versicle: "O Anjo do Senhor anunciou a Maria.",
@@ -32,7 +32,7 @@ const angelus = [
         ],
     },
     {
-        title: "Latim",
+        language: "Latim",
         prayers: [
             {
                 versicle: "Angelus Domini nuntiavit Mariae.",
@@ -95,8 +95,8 @@ export default function Angelus() {
 
             <div id="columns-wrap">
                 {angelus.map((item) => (
-                    <div className="column-block" key={item.title}>
-                        <h3>{item.title}</h3>
+                    <div className="column-block" key={item.language}>
+                        <h3>{item.language}</h3>
                         {item.prayers.map((prayer) => (
                             <AngelusBlock prayer={prayer} key={prayer} />
                         ))}
