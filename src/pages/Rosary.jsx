@@ -119,15 +119,14 @@ function MysterySet({ data }) {
                 className="set-title"
                 onClick={() => {
                     setOpen(!open);
-                }}
-            >
+                }}>
                 {open ? "▼ " : "► "}
                 {data.title}
             </h3>
 
             {open &&
-                data.mysteries.map((mystery) => (
-                    <Mystery key={mystery.id} mystery={mystery} />
+                data.mysteries.map((mystery, index) => (
+                    <Mystery key={index} mystery={mystery} />
                 ))}
         </>
     );
@@ -142,10 +141,14 @@ export default function Rosary() {
 
             <ShortPrayers />
 
-            <MysterySet data={joyfulMysteries} />
-            <MysterySet data={sorrowfulMysteries} />
-            <MysterySet data={gloriousMysteries} />
-            <MysterySet data={luminousMysteries} />
+            {[
+                joyfulMysteries,
+                sorrowfulMysteries,
+                gloriousMysteries,
+                luminousMysteries,
+            ].map((data, index) => (
+                <MysterySet data={data} key={index} />
+            ))}
 
             <Thanksgiving />
         </section>

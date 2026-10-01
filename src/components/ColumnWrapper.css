@@ -1,0 +1,16 @@
+.columns-wrap {
+    display: flex;
+    flex-direction: row;
+
+    gap: 2rem;
+}
+
+.column-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 25vw;
+
+    gap: var(--vertical-gap);
+}

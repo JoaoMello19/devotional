@@ -13,15 +13,15 @@
     transition: transform 0.3s ease;
 }
 
-#close-button {
+#sidebar button {
     display: none;
 }
 
-#close-button img {
+#sidebar button img {
     max-height: 1rem;
 }
 
-#sidebar img {
+#sidebar > img {
     max-width: 3rem;
 }
 
@@ -38,7 +38,7 @@
 
 #sidebar hr {
     width: 100%;
-    margin: 1vh auto;
+    margin: 1rem auto;
     border-bottom: 1px solid var(--white-75);
 }
 
@@ -47,7 +47,7 @@
     width: 100%;
 }
 
-#navigation a {
+.nav-link {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,7 +61,7 @@
     font-size: 1.1rem;
 }
 
-#navigation .active {
+.nav-link.active {
     color: var(--yellow);
     font-weight: bold;
     background-color: var(--white-10);
@@ -93,19 +93,11 @@
         transform: translateX(0);
     }
 
-    #close-button {
+    #sidebar button {
         display: block;
         background-color: transparent;
         color: white;
         margin: 0 0 0 auto;
+    
     }
-
-    /* #menu-icon {
-        display: block;
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 1100;
-        cursor: pointer;
-    } */
 }

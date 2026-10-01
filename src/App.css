@@ -13,6 +13,17 @@ main {
     padding-left: var(--sidebar-width);
 }
 
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("./assets/background.jpg");
+    background-repeat: repeat;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     main {

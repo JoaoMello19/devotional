@@ -1,5 +1,7 @@
 import "./Angelus.css";
 
+import { ColumnBlock } from "../components/ColumnWrapper";
+
 const angelus = [
     {
         language: "Português",
@@ -63,7 +65,7 @@ const angelus = [
     },
 ];
 
-const Mark = ({ style, text }) => {
+const Versicle = ({ style = "versicle", text }) => {
     return (
         <p>
             <span className="red-text">
@@ -74,14 +76,14 @@ const Mark = ({ style, text }) => {
     );
 };
 
-function AngelusBlock({ prayer, key }) {
+function AngelusBlock({ item }) {
     return (
-        <div className="angelus-block" key={key}>
-            <Mark style={"versicle"} text={prayer.versicle} />
-            <Mark style={"response"} text={prayer.response} />
-            {prayer.afterPrayer && (
+        <div className="angelus-block">
+            <Versicle text={item.versicle} />
+            <Versicle style={"response"} text={item.response} />
+            {item.afterPrayer && (
                 <span className="annotation after-prayer">
-                    ({prayer.afterPrayer})
+                    ({item.afterPrayer})
                 </span>
             )}
         </div>
@@ -93,14 +95,14 @@ export default function Angelus() {
         <section className="content">
             <h2 className="page-title">Angelus</h2>
 
-            <div class="columns-wrap">
-                {angelus.map((item) => (
-                    <div className="column-block" key={item.language}>
-                        <h3>{item.language}</h3>
-                        {item.prayers.map((prayer) => (
-                            <AngelusBlock prayer={prayer} key={prayer} />
-                        ))}
-                    </div>
+            <div className="columns-wrap">
+                {angelus.map((item, index) => (
+                    <ColumnBlock
+                        title={item.language}
+                        items={item.prayers}
+                        key={index}
+                        ItemComponent={AngelusBlock}
+                    />
                 ))}
             </div>
         </section>

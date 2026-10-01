@@ -15,15 +15,16 @@ function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
     return (
         <NavLink
             to={href}
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={closeMenu}
-        >
+            className={({ isActive }) =>
+                isActive ? "active nav-link" : " nav-link"
+            }
+            onClick={closeMenu}>
             {({ isActive }) => (
                 <>
                     <img
                         src={isActive ? activeIcon : icon}
-                        alt=""
                         className="nav-icon"
+                        alt=""
                     />
                     <span>{title}</span>
                 </>
@@ -63,9 +64,8 @@ export default function SideBar({ menuOpen, closeMenu }) {
     return (
         <aside
             id="sidebar"
-            className={menuOpen ? "open flex-column" : "flex-column"}
-        >
-            <button id="close-button" onClick={closeMenu}>
+            className={menuOpen ? "open flex-column" : "flex-column"}>
+            <button id="btn-close-sidebar" onClick={closeMenu}>
                 <img src={close} alt="" />
             </button>
             <img src={crucifix} alt="" />

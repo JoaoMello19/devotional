@@ -66,7 +66,7 @@ export const holyMary = [
     },
     {
         key: "holyMaryLa",
-        title: "Ave Maria",
+        title: "Ave Maria (Latim)",
         verses: [
             [
                 "Ave María, gratia plena,",
