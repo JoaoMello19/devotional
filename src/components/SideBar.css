@@ -17,6 +17,10 @@
     display: none;
 }
 
+#close-button img {
+    max-height: 1rem;
+}
+
 #sidebar img {
     max-width: 3rem;
 }

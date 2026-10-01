@@ -93,7 +93,7 @@ export default function Angelus() {
         <section className="content">
             <h2 className="page-title">Angelus</h2>
 
-            <div id="columns-wrap">
+            <div class="columns-wrap">
                 {angelus.map((item) => (
                     <div className="column-block" key={item.language}>
                         <h3>{item.language}</h3>

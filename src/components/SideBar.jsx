@@ -7,6 +7,8 @@ import rosary from "../assets/rosary.png";
 import rosaryActive from "../assets/rosary_active.png";
 import angel from "../assets/angel.png";
 import angelActive from "../assets/angel_active.png";
+
+import close from "../assets/close.png";
 import crucifix from "../assets/crucifix.png";
 
 function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
@@ -39,6 +41,12 @@ export default function SideBar({ menuOpen, closeMenu }) {
             activeIcon: homeActive,
         },
         {
+            link: "/common",
+            title: "Orações",
+            icon: home,
+            activeIcon: homeActive,
+        },
+        {
             link: "/rosary",
             title: "Santo Terço",
             icon: rosary,
@@ -58,7 +66,7 @@ export default function SideBar({ menuOpen, closeMenu }) {
             className={menuOpen ? "open flex-column" : "flex-column"}
         >
             <button id="close-button" onClick={closeMenu}>
-                X
+                <img src={close} alt="" />
             </button>
             <img src={crucifix} alt="" />
             <h1>Meu Devocionário</h1>

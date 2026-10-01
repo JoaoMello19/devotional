@@ -9,6 +9,7 @@ import Angelus from "./pages/Angelus";
 
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
+import CommonPrayers from "./pages/CommonPrayers";
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/rosary" element={<Rosary />} />
                     <Route path="/angelus" element={<Angelus />} />
+                    <Route path="/common" element={<CommonPrayers />} />
                 </Routes>
             </main>
         </div>

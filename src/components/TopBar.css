@@ -1,12 +1,11 @@
 #topbar {
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 4rem;
+
+    margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     gap: 1vw;
-}
-
-#menu-icon {
-    max-height: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #title {
@@ -16,7 +15,12 @@
 }
 
 #menu-button {
+    display: flex;
     background-color: transparent;
+}
+
+#menu-icon {
+    max-height: 2rem;
 }
 
 /* Mobile */

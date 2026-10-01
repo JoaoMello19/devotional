@@ -101,7 +101,8 @@ function Mystery({ mystery }) {
                 entre as mulheres, e bendito é o fruto do vosso ventre, Jesus,{" "}
                 <span className="meditation">{mystery.meditation}</span>. Santa
                 Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora da
-                nossa morte. Amém.
+                nossa morte. Amém.{" "}
+                <span className="annotation">(10 vezes)</span>
             </p>
 
             <span className="annotation">(Glória ao Pai, Jaculatória)</span>
