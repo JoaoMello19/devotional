@@ -134,7 +134,7 @@ function MysterySet({ data }) {
 
 export default function Rosary() {
     return (
-        <section className="content">
+        <section id="rosary" className="content">
             <h2 className="page-title">Santo Terço</h2>
 
             <Offering />

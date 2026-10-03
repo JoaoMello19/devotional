@@ -14,3 +14,9 @@
 
     gap: var(--vertical-gap);
 }
+
+@media (max-width: 768px) {
+    .columns-wrap {
+        flex-direction: column;
+    }
+}
