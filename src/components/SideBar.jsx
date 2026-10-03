@@ -7,6 +7,10 @@ import rosary from "../assets/rosary.png";
 import rosaryActive from "../assets/rosary_active.png";
 import angel from "../assets/angel.png";
 import angelActive from "../assets/angel_active.png";
+import prayingHands from "../assets/praying_hands.png";
+import prayingHandsActive from "../assets/praying_hands_active.png";
+import shield from "../assets/shield.png";
+import shieldActive from "../assets/shield_active.png";
 
 import close from "../assets/close.png";
 import crucifix from "../assets/crucifix.png";
@@ -18,7 +22,8 @@ function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
             className={({ isActive }) =>
                 isActive ? "active nav-link" : " nav-link"
             }
-            onClick={closeMenu}>
+            onClick={closeMenu}
+        >
             {({ isActive }) => (
                 <>
                     <img
@@ -44,8 +49,14 @@ export default function SideBar({ menuOpen, closeMenu }) {
         {
             link: "/common",
             title: "Orações",
-            icon: home,
-            activeIcon: homeActive,
+            icon: prayingHands,
+            activeIcon: prayingHandsActive,
+        },
+        {
+            link: "/saint_patrick",
+            title: "Couraça de São Patrício",
+            icon: shield,
+            activeIcon: shieldActive,
         },
         {
             link: "/rosary",
@@ -64,7 +75,8 @@ export default function SideBar({ menuOpen, closeMenu }) {
     return (
         <aside
             id="sidebar"
-            className={menuOpen ? "open flex-column" : "flex-column"}>
+            className={menuOpen ? "open flex-column" : "flex-column"}
+        >
             <button id="btn-close-sidebar" onClick={closeMenu}>
                 <img src={close} alt="" />
             </button>

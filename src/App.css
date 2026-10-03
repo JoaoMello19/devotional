@@ -7,9 +7,9 @@
 }
 
 main {
+    position: relative;
     flex: 1;
     padding-bottom: 1rem;
-    color: var(--dark-blue);
     padding-left: var(--sidebar-width);
 }
 
@@ -17,8 +17,10 @@ main::before {
     content: "";
     position: absolute;
     inset: 0;
+
     background-image: url("./assets/background.jpg");
     background-repeat: repeat;
+
     opacity: 0.25;
     z-index: -1;
     pointer-events: none;

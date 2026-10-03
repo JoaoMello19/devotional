@@ -1,7 +1,6 @@
 #full-image {
     margin: auto;
-    height: calc(100% - 2rem);
-    width: calc(100% - 2rem);
+    width: 100%;
     border-radius: 1rem;
 
     object-fit: cover;
