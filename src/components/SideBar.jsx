@@ -47,10 +47,10 @@ export default function SideBar({ menuOpen, closeMenu }) {
             activeIcon: homeActive,
         },
         {
-            link: "/common",
-            title: "Orações",
-            icon: prayingHands,
-            activeIcon: prayingHandsActive,
+            link: "/angelus",
+            title: "Angelus",
+            icon: angel,
+            activeIcon: angelActive,
         },
         {
             link: "/saint_patrick",
@@ -65,10 +65,16 @@ export default function SideBar({ menuOpen, closeMenu }) {
             activeIcon: rosaryActive,
         },
         {
-            link: "/angelus",
-            title: "Angelus",
-            icon: angel,
-            activeIcon: angelActive,
+            link: "/saint_catherine",
+            title: "Oração a Santa Catarina",
+            icon: shield,
+            activeIcon: shieldActive,
+        },
+        {
+            link: "/common",
+            title: "Orações",
+            icon: prayingHands,
+            activeIcon: prayingHandsActive,
         },
     ];
 
