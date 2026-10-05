@@ -18,7 +18,17 @@ function App() {
 
     return (
         <div className="container">
-            <SideBar menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
+            <SideBar
+                menuOpen={menuOpen}
+                closeMenu={() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                    setMenuOpen(false);
+                }}
+            />
+
             <main className="flex-column">
                 <TopBar onClick={() => setMenuOpen(!menuOpen)} />
                 <Routes>

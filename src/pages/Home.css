@@ -1,8 +1,5 @@
 #full-image {
     margin: auto;
     width: 100%;
-    border-radius: 1rem;
-
     object-fit: cover;
-    opacity: 95%;
 }
