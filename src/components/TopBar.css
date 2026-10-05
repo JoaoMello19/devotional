@@ -13,6 +13,7 @@
 #topbar #title {
     flex: 1;
     color: white;
+    font-size: 1.5rem;
     text-align: center;
 }
 

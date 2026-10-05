@@ -7,6 +7,7 @@ import {
     gloriousMysteries,
     luminousMysteries,
 } from "../data/rosary.js";
+import rightArrow from "../assets/right_arrow.png";
 
 function Offering() {
     return (
@@ -15,7 +16,7 @@ function Offering() {
 
             <span className="annotation">(Sinal da Cruz)</span>
 
-            <p>
+            <p className="justified">
                 Divino Jesus, nós vos oferecemos este terço que vamos rezar,
                 meditando nos mistérios da Vossa Redenção. Concedei-nos, por
                 intercessão da Virgem Maria, Mãe de Deus e nossa Mãe, as
@@ -23,7 +24,7 @@ function Offering() {
                 ganharmos as indulgências desta santa devoção.
             </p>
 
-            <p>
+            <p className="justified">
                 Oferecemos particularmente, em desagravo dos pecados cometidos
                 contra o Santíssimo Coração de Jesus e Imaculado Coração de
                 Maria, pela paz do mundo, pela conversão dos pecadores, pelas
@@ -50,7 +51,7 @@ function ShortPrayers() {
 
             <h4>Jaculatória 1</h4>
 
-            <p>
+            <p className="justified">
                 Óh! meu Jesus, perdoai-nos, livrai-nos do fogo do inferno. Levai
                 as almas todas para o céu e socorrei principalmente as que mais
                 precisarem.
@@ -58,14 +59,16 @@ function ShortPrayers() {
 
             <h4>Jaculatória 2</h4>
 
-            <p>
+            <p className="justified">
                 Oh! Virgem Santíssima, não permitais que morramos ou vivamos em
                 pecado mortal, em pecado mortal, não haveremos de morrer, pois a
                 Virgem Santíssima nos há de valer, nos há de valer na maior
                 aflição.
             </p>
 
-            <p>Ó Virgem Santíssima, tende de nós compaixão.</p>
+            <p className="justified">
+                Ó Virgem Santíssima, tende de nós compaixão.
+            </p>
         </>
     );
 }
@@ -75,7 +78,7 @@ function Thanksgiving() {
         <>
             <h3>Agradecimento</h3>
 
-            <p>
+            <p className="justified">
                 Infinitas graças vos damos, Soberana Rainha, pelos benefícios
                 que todos os dias recebemos de vossas mãos liberais. Dignai-vos
                 agora e para sempre tomar-nos debaixo de vosso poderoso amparo e
@@ -92,11 +95,11 @@ function Mystery({ mystery }) {
     return (
         <>
             <h4>{title}</h4>
-            <p>{mystery.offering}</p>
+            <p className="justified">{mystery.offering}</p>
 
             <span className="annotation">(Pai Nosso)</span>
 
-            <p>
+            <p className="justified">
                 Ave Maria, cheia de graça, o Senhor é convosco, bendita sois vós
                 entre as mulheres, e bendito é o fruto do vosso ventre, Jesus,{" "}
                 <span className="meditation">{mystery.meditation}</span>. Santa
@@ -110,17 +113,19 @@ function Mystery({ mystery }) {
     );
 }
 
-function MysterySet({ data }) {
-    const [open, setOpen] = useState(false);
-
+function MysterySet({ data, open, setOpen }) {
     return (
         <>
-            <h3
-                className="set-title"
-                onClick={() => {
-                    setOpen(!open);
-                }}>
-                {open ? "▼ " : "► "}
+            <h3 className="set-title" onClick={setOpen}>
+                {open ? (
+                    <img src={rightArrow} alt="" className="arrow arrow-open" />
+                ) : (
+                    <img
+                        src={rightArrow}
+                        alt=""
+                        className="arrow arrow-close"
+                    />
+                )}
                 {data.title}
             </h3>
 
@@ -133,6 +138,7 @@ function MysterySet({ data }) {
 }
 
 export default function Rosary() {
+    const [open, setOpen] = useState(-1);
     return (
         <section id="rosary" className="content">
             <h2 className="page-title">Santo Terço</h2>
@@ -147,7 +153,16 @@ export default function Rosary() {
                 gloriousMysteries,
                 luminousMysteries,
             ].map((data, index) => (
-                <MysterySet data={data} key={index} />
+                <MysterySet
+                    data={data}
+                    key={index}
+                    open={open === index}
+                    setOpen={() => {
+                        if (open === index)
+                            setOpen(-1);
+                        else setOpen(index)
+                    }}
+                />
             ))}
 
             <Thanksgiving />

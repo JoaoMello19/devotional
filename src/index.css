@@ -11,7 +11,7 @@
 
     --sidebar-width: 20rem;
     --vertical-gap: 1rem;
-    --top-bar-height: 4rem;
+    --top-bar-height: 3rem;
 }
 
 * {
@@ -91,4 +91,10 @@ h1 {
     /* text-align: justify;
     hyphens: auto;
     overflow-wrap: break-word; */
+}
+
+.justified {
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
 }

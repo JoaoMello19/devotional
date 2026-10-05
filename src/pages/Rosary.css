@@ -1,11 +1,3 @@
-section#rosary {
-    p {
-        text-align: justify;
-        hyphens: auto;
-        overflow-wrap: break-word;
-    }
-}
-
 .mystery {
     font-size: 1.25rem;
 }
@@ -16,4 +8,14 @@ section#rosary {
 
 .meditation {
     font-weight: bold;
+}
+
+.arrow {
+    height: 0.75rem;
+    margin-right: .5rem;
+    transition: transform 100ms;
+}
+
+.arrow-open {
+    transform: rotateZ(90deg);
 }
