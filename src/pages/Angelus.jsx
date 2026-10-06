@@ -78,7 +78,7 @@ const Versicle = ({ style = "versicle", text }) => {
 
 function AngelusBlock({ item }) {
     return (
-        <div className="angelus-block">
+        <div className="flex-column angelus-block">
             <Versicle text={item.versicle} />
             <Versicle style={"response"} text={item.response} />
             {item.afterPrayer && (
@@ -92,8 +92,14 @@ function AngelusBlock({ item }) {
 
 export default function Angelus() {
     return (
-        <section className="content">
+        <section id="angelus" className="content">
             <h2 className="page-title">Angelus</h2>
+            <p>Uma pausa para recordar a Encarnação do Senhor</p>
+
+            <div id="citation">
+                <p>"O verbo se fez carne e habitou entre nós"</p>
+                <p>Jo 1, 14</p>
+            </div>
 
             <div className="columns-wrap">
                 {angelus.map((item, index) => (

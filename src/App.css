@@ -21,7 +21,7 @@ main::before {
     background-image: url("./assets/background.jpg");
     background-repeat: repeat;
 
-    opacity: 0.5;
+    opacity: 0.1;
     z-index: -1;
     pointer-events: none;
 }
@@ -30,9 +30,5 @@ main::before {
 @media (max-width: 768px) {
     main {
         padding-left: 0;
-    }
-
-    .content {
-        margin-top: calc(var(--top-bar-height) + var(--vertical-gap));
     }
 }

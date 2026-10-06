@@ -1,8 +1,13 @@
-
+#angelus #citation {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: #D1E8FC;
+    font-style: italic;
+}
 
 .angelus-block {
-    display: flex;
-    flex-direction: column;
+    align-items: baseline;
 }
 
 .angelus-block :nth-child(3) {
@@ -11,14 +16,4 @@
 
 .red-text {
     color: var(--red);
-}
-
-strong {
-    color: var(--red);
-}
-
-@media (max-width: 768px) {
-    #columns-wrap {
-        flex-direction: column;
-    }
 }

@@ -26,6 +26,10 @@
     max-width: 3rem;
 }
 
+#sidebar h1 {
+    font-size: 1.75rem;
+}
+
 #sidebar h2 {
     font-style: italic;
     font-size: 0.9rem;
@@ -95,6 +99,5 @@
         background-color: transparent;
         color: white;
         margin: 0 0 0 auto;
-    
     }
 }

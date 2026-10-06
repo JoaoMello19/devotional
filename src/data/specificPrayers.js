@@ -122,4 +122,24 @@ const saintCatherine = {
     afterPrayer: "(Pai Nosso, Ave Maria, Glória ao Pai)",
 };
 
-export { saintPatrick, saintCatherine };
+const saintMichael = {
+    title: "Oração a São Miguel Arcanjo",
+    prayer: [
+        [
+            "São Miguel Arcanjo,",
+            "defendei-nos no combate,",
+            "sede nosso refúgio",
+            "contra as maldades e ciladas do demônio.",
+        ],
+        [
+            "Ordene-lhe Deus, instantemente o pedimos;",
+            "e vós, príncipe da milícia celeste,",
+            "pelo divino poder, precipitai no inferno a Satanás",
+            "e aos outros espíritos malignos",
+            "que andam pelo mundo para perder as almas.",
+        ],
+        ["Amém."],
+    ],
+};
+
+export { saintPatrick, saintCatherine, saintMichael };

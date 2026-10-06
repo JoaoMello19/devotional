@@ -10,7 +10,11 @@ import Angelus from "./pages/Angelus";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import CommonPrayers from "./pages/CommonPrayers";
-import { saintCatherine, saintPatrick } from "./data/specificPrayers";
+import {
+    saintCatherine,
+    saintMichael,
+    saintPatrick,
+} from "./data/specificPrayers";
 import FullPrayer from "./pages/FullPrayer";
 
 function App() {
@@ -43,6 +47,10 @@ function App() {
                     <Route
                         path="/saint_catherine"
                         element={<FullPrayer prayer={saintCatherine} />}
+                    />
+                    <Route
+                        path="/saint_michael"
+                        element={<FullPrayer prayer={saintMichael} />}
                     />
                 </Routes>
             </main>

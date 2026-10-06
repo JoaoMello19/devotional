@@ -71,6 +71,12 @@ export default function SideBar({ menuOpen, closeMenu }) {
             activeIcon: shieldActive,
         },
         {
+            link: "/saint_michael",
+            title: "Oração a São Miguel Arcanjo",
+            icon: shield,
+            activeIcon: shieldActive,
+        },
+        {
             link: "/common",
             title: "Orações",
             icon: prayingHands,

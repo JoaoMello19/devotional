@@ -40,28 +40,22 @@
     align-items: center;
 }
 
-h1,
-h2 {
-    text-align: center;
-}
-
 h1 {
-    font-size: 1.75rem;
+    text-align: center;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-
+    
     min-width: 40vw;
+    max-width: 90%;
 
-    margin: var(--vertical-gap) 5vw 10rem 5vw;
     padding: 1rem;
     gap: var(--vertical-gap);
+    margin-bottom: 10rem;
 
     color: black;
-    background-color: var(--white-75);
-    box-shadow: 1px 1px 5px black;
 }
 
 .content h2 {
@@ -97,4 +91,10 @@ h1 {
     text-align: justify;
     hyphens: auto;
     overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-top: var(--top-bar-height);
+    }
 }
