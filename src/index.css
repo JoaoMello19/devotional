@@ -49,7 +49,7 @@ h1 {
     flex-direction: column;
     
     min-width: 40vw;
-    max-width: 90%;
+    max-width: 75%;
 
     padding: 1rem;
     gap: var(--vertical-gap);
@@ -96,5 +96,6 @@ h1 {
 @media (max-width: 768px) {
     .content {
         margin-top: var(--top-bar-height);
+        max-width: 90%;
     }
 }

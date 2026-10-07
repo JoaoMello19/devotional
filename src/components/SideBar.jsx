@@ -1,21 +1,13 @@
 import { NavLink } from "react-router-dom";
 
 import "./SideBar.css";
-import home from "../assets/home.png";
-import homeActive from "../assets/home_active.png";
-import rosary from "../assets/rosary.png";
-import rosaryActive from "../assets/rosary_active.png";
-import angel from "../assets/angel.png";
-import angelActive from "../assets/angel_active.png";
-import prayingHands from "../assets/praying_hands.png";
-import prayingHandsActive from "../assets/praying_hands_active.png";
-import shield from "../assets/shield.png";
-import shieldActive from "../assets/shield_active.png";
+
+import icons from "../assets/menu_icons";
 
 import close from "../assets/close.png";
 import crucifix from "../assets/crucifix.png";
 
-function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
+function NavigationItem({ href = "#", title, icon, closeMenu }) {
     return (
         <NavLink
             to={href}
@@ -27,7 +19,7 @@ function NavigationItem({ href = "#", title, icon, activeIcon, closeMenu }) {
             {({ isActive }) => (
                 <>
                     <img
-                        src={isActive ? activeIcon : icon}
+                        src={isActive ? icon.active : icon.default}
                         className="nav-icon"
                         alt=""
                     />
@@ -43,44 +35,37 @@ export default function SideBar({ menuOpen, closeMenu }) {
         {
             link: "/",
             title: "Início",
-            icon: home,
-            activeIcon: homeActive,
+            icon: icons.home,
         },
         {
             link: "/angelus",
             title: "Angelus",
-            icon: angel,
-            activeIcon: angelActive,
+            icon: icons.angel,
         },
         {
             link: "/saint_patrick",
             title: "Couraça de São Patrício",
-            icon: shield,
-            activeIcon: shieldActive,
+            icon: icons.shield,
         },
         {
             link: "/rosary",
             title: "Santo Terço",
-            icon: rosary,
-            activeIcon: rosaryActive,
+            icon: icons.rosary,
         },
         {
             link: "/saint_catherine",
             title: "Oração a Santa Catarina",
-            icon: shield,
-            activeIcon: shieldActive,
+            icon: icons.shield,
         },
         {
             link: "/saint_michael",
             title: "Oração a São Miguel Arcanjo",
-            icon: shield,
-            activeIcon: shieldActive,
+            icon: icons.shield,
         },
         {
             link: "/common",
             title: "Orações",
-            icon: prayingHands,
-            activeIcon: prayingHandsActive,
+            icon: icons.prayingHands,
         },
     ];
 
@@ -105,7 +90,6 @@ export default function SideBar({ menuOpen, closeMenu }) {
                         title={page.title}
                         href={page.link}
                         icon={page.icon}
-                        activeIcon={page.activeIcon}
                         closeMenu={closeMenu}
                     />
                 ))}
